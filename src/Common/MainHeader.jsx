@@ -21,7 +21,7 @@ const MainHeader = () => {
     Uttar Pradesh Renewable and EV Infrastructure Limited
         </h1>
         <p className="text-lg  text-orange-700 font-bold">
-          Department of Additional Sources of Energy, Government of Uttar Pradesh
+          Department of Electric Vehicle, Government of Uttar Pradesh
         </p>
       </div>
       <div className="flex items-center space-x-4">

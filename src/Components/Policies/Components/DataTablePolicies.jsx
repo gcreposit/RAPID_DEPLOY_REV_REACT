@@ -9,7 +9,7 @@ const DataTablePolicies = () => {
       type: "PDF",
       size: "500 KB",
       language: "Hindi",
-      viewLink: "/policies/EV Policy Claim SOP (1).pdf",
+      viewLink: "/All_Pdf/Policies/BioEnergyPolicy_2022.pdf",
     },
     {
       srNo: 2,
@@ -18,7 +18,7 @@ const DataTablePolicies = () => {
       type: "PDF",
       size: "975 KB",
       language: "English",
-      viewLink: "/policies/BioEnergyPolicy_2022.pdf",
+      viewLink: "/All_Pdf/Policies/UPREV_GH_Policy-English.pdf",
     },
     {
       srNo: 3,
@@ -27,7 +27,7 @@ const DataTablePolicies = () => {
       type: "PDF",
       size: "1615 KB",
       language: "Hindi",
-      viewLink: "/policies/UPREV_GH_Policy-English.pdf",
+      viewLink: "/All_Pdf/Policies/UPREV_Solar_Energy_Policy2022_English.pdf",
     },
         {
       srNo: 4,
@@ -36,7 +36,7 @@ const DataTablePolicies = () => {
       type: "PDF",
       size: "1615 KB",
       language: "Hindi",
-      viewLink: "/policies/UPREV_Solar_Energy_Policy2022_English.pdf",
+      viewLink: "/All_Pdf/Policies/Uttar-Pradesh-Electric-Vehicle-Manufacturing-Policy-2022.pdf",
     },
     
   ];

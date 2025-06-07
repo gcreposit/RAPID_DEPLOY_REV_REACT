@@ -7,7 +7,9 @@ import TextFieldsIcon from '@mui/icons-material/TextFields'; // Material UI icon
 
 const TopHeader = () => {
   return (
-    <header  className="bg-gradient-to-r from-green-600 via-green-400 to-green-100 text-white py-1 flex justify-between items-center px-10">
+    // bg-gradient-to-r from-green-600 via-green-400 to-green-100
+    <header  className=" bg-green-800
+ text-white py-1 flex justify-between items-center px-10">
       <div className="flex items-center">
         <span className="font-semibold text-lg">उत्तर प्रदेश सरकार</span>
         <span className="ml-2 text-sm">| Government of Uttar Pradesh</span>

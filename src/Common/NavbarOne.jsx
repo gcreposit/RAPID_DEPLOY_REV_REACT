@@ -7,24 +7,28 @@ const NavbarOne = () => {
   const [homeHovered, setHomeHovered] = useState(false);  // Track Home hover state
   const [centralHovered, setCentralHovered] = useState(false);  // Track Central hover state
   const [discomsHovered, setDiscomsHovered] = useState(false);  // Track Discoms hover state
+  const [aboutHovered, setAboutHovered] = useState(false);  // Track About Us hover state
   const [mediaHovered, setMediaHovered] = useState(false);  // Track Media hover state
 
   const dropdownVariants = {
     initial: { opacity: 0, y: -10 },
     animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -10 },
   };
 
   return (
     <motion.nav
-    // bg-gradient-to-b from-green-600 via-green-400 to-green-100
-      className="bg-gradient-to-r from-green-600 via-green-400 to-green-100 text-white py-1 px-10 mt-1 shadow-lg"
+      className="bg-green-700 text-white py-1 px-10 mt-1 shadow-lg"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
       <div className="flex justify-between items-center">
-        <motion.ul className="flex space-x-10 text-lg font-medium" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }}>
+        <motion.ul
+          className="flex space-x-10 text-lg font-medium"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        >
           {/* HOME */}
           <li
             className="relative group flex items-center"
@@ -32,36 +36,33 @@ const NavbarOne = () => {
             onMouseLeave={() => setHomeHovered(false)}
           >
             <FaHome className="mr-2" />
-            <a className="hover:text-yellow-500 cursor-pointer z-20 uppercase">Home</a>
+            <a className="hover:text-yellow-500 cursor-pointer z-20">Home</a>
             {homeHovered && (
               <motion.ul
                 className="absolute top-5 left-0 mt-2 bg-white text-black rounded-md shadow-md z-10 w-48"
                 initial="initial"
                 animate="animate"
-                exit="exit"
                 variants={dropdownVariants}
               >
-                <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer uppercase">State</li>
+                <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">State</li>
                 {/* CENTRAL - with sub-dropdown */}
                 <li
                   className="relative group flex items-center"
                   onMouseEnter={() => setCentralHovered(true)}
                   onMouseLeave={() => setCentralHovered(false)}
                 >
-                  <a className="hover:text-yellow-500 cursor-pointer px-4 py-2 uppercase">Central</a>
+                  <a className="hover:text-yellow-500 cursor-pointer px-4 py-2">Central</a>
                   {centralHovered && (
                     <motion.ul
-                      className="absolute left-48 top-0 mt-2 bg-white text-black rounded-md shadow-md z-10 w-48"
+                      className="absolute left-48 top-0 mt-2 bg-white text-black rounded-md shadow-md z-20 w-48"
                       initial="initial"
                       animate="animate"
-                      exit="exit"
                       variants={dropdownVariants}
-                    > 
-              <Link to="/data-table">
-  <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Ministry of Power (MOP)</li>
-</Link>
-
-                      <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Ministry of Health Industry (MOHI)</li>
+                    >
+                      <Link to="/data-table-MOP">
+                        <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Ministry of Power (MOP)</li>
+                      </Link>
+                      <li className="px-4 py-2 z-30 hover:bg-gray-200 cursor-pointer">Ministry of Health Industry (MOHI)</li>
                     </motion.ul>
                   )}
                 </li>
@@ -71,10 +72,18 @@ const NavbarOne = () => {
 
           {/* POLICIES */}
           <Link to="/policies">
-          <li className="hover:text-yellow-500 cursor-pointer flex items-center uppercase">
-            <FaFileAlt className="mr-2" />
-            <a>Policies</a>
-          </li>
+            <li className="hover:text-yellow-500 cursor-pointer flex items-center">
+              <FaFileAlt className="mr-2" />
+              <a>Policies</a>
+            </li>
+          </Link>
+
+           {/* POLICIES */}
+          <Link to="/state">
+            <li className="hover:text-yellow-500 cursor-pointer flex items-center">
+              <FaFileAlt className="mr-2" />
+              <a>State</a>
+            </li>
           </Link>
 
           {/* DISCOMS */}
@@ -84,13 +93,12 @@ const NavbarOne = () => {
             onMouseLeave={() => setDiscomsHovered(false)}
           >
             <FaBuilding className="mr-2" />
-            <a className="hover:text-yellow-500 cursor-pointer uppercase">DISCOMS</a>
+            <a className="hover:text-yellow-500 cursor-pointer">Discoms</a>
             {discomsHovered && (
               <motion.ul
                 className="absolute top-5 left-0 mt-2 bg-white text-black rounded-md shadow-md z-10 w-48"
                 initial="initial"
                 animate="animate"
-                exit="exit"
                 variants={dropdownVariants}
               >
                 <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer uppercase">MVVNL</li>
@@ -102,17 +110,42 @@ const NavbarOne = () => {
             )}
           </li>
 
+          {/* ABOUT US */}
+          <li
+            className="relative group flex items-center"
+            onMouseEnter={() => setAboutHovered(true)}
+            onMouseLeave={() => setAboutHovered(false)}
+          >
+            <FaBuilding className="mr-2" />
+            <a className="hover:text-yellow-500 cursor-pointer">About Us</a>
+            {aboutHovered && (
+              <motion.ul
+                className="absolute left-0 top-5 mt-2 bg-white text-black rounded-md shadow-md z-10 w-48"
+                initial="initial"
+                animate="animate"
+                variants={dropdownVariants}
+              >
+                <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer uppercase">About Department</li>
+                <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer uppercase">Mission</li>
+                <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer uppercase">Vision</li>
+                <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer uppercase">Organization</li>
+              </motion.ul>
+            )}
+          </li>
+
           {/* TENDER */}
-          <li className="hover:text-yellow-500 cursor-pointer flex items-center uppercase">
+          <li className="hover:text-yellow-500 cursor-pointer flex items-center">
             <FaFileAlt className="mr-2" />
             <a>Tender</a>
           </li>
 
           {/* DOCUMENT */}
+          <Link to="/document">
           <li className="hover:text-yellow-500 cursor-pointer flex items-center">
             <FaFileAlt className="mr-2" />
             <a>Document</a>
           </li>
+          </Link>
 
           {/* MEDIA */}
           <li
@@ -121,13 +154,12 @@ const NavbarOne = () => {
             onMouseLeave={() => setMediaHovered(false)}
           >
             <FaCamera className="mr-2" />
-            <a className="hover:text-yellow-500 cursor-pointer uppercase">Media</a>
+            <a className="hover:text-yellow-500 cursor-pointer">Media</a>
             {mediaHovered && (
               <motion.ul
-                className="absolute left-0  top-5 mt-2 bg-white text-black rounded-md shadow-md z-10 w-64"
+                className="absolute left-0 top-5 mt-2 bg-white text-black rounded-md shadow-md z-10 w-64"
                 initial="initial"
                 animate="animate"
-                exit="exit"
                 variants={dropdownVariants}
               >
                 <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Photo Gallery</li>
@@ -139,10 +171,12 @@ const NavbarOne = () => {
           </li>
 
           {/* CONTACT US */}
-          <li className="hover:text-yellow-500 cursor-pointer flex items-center uppercase">
+          <Link to="/contact_us">
+          <li className="hover:text-yellow-500 cursor-pointer flex items-center">
             <FaPhoneAlt className="mr-2" />
             <a>Contact Us</a>
           </li>
+          </Link>
         </motion.ul>
       </div>
     </motion.nav>
