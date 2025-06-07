@@ -1,42 +1,3 @@
-// import { useState } from 'react'
-
-// import './App.css'
-
-// import TopHeader from './Components/TopHeader'
-
-// import MainHeader from './Components/MainHeader'
-
-// import NavbarOne from './Components/NavbarOne'
-
-// import SliderSection from './Components/SimpleSlider'
-// // import PolicyAndPortals from './Components/PolicyAndPortals'
-// import EVPolicyAndPortals from './Components/PolicyAndPortals'
-// import FooterAndSliderOne from './Components/FooterAndSliderOne'
-
-// import ClientLogos from './Components/ClientLogos'
-// import SimpleSlider from './Components/SimpleSlider'
-// import DataTable from './Components/DataTable'
-
-
-
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <>
-// <TopHeader/>
-// <MainHeader/>
-// <NavbarOne/>
-// <SimpleSlider/>
-// <EVPolicyAndPortals/>
-// <ClientLogos/>
-// <FooterAndSliderOne/>
-// <DataTable/>
-//     </>
-//   )
-// }
-
-// export default App
 
 
 import { useState } from 'react'
@@ -53,7 +14,7 @@ import FooterAndSliderOne from './Common/FooterAndSliderOne'
 import ClientLogos from './Components/Home/Component/ClientLogos'
 import SimpleSlider from './Components/Home/Component/SimpleSlider'
 import DataTable from './Components/DataTable'
-import HomeOne from './Components/Home/homeOne'
+import HomeOne from './Components/Home/HomeOne'
 import Policies from './Components/Policies/Policies'
 
 function App() {
